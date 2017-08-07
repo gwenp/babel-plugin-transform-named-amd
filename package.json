@@ -1,0 +1,28 @@
+{
+  "name": "babel-plugin-transform-named-amd",
+  "version": "0.0.0",
+  "description": "This plugin transforms ES2015 modules to named Asynchronous Module Definition (AMD)",
+  "repository": "gwenp/babel-plugin-transform-named-amd",
+  "author": "gwenp <info@gwenp.fr>",
+  "main": "lib/index.js",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "mocha": "^3.1.2"
+  },
+  "scripts": {
+    "clean": "rm -rf lib",
+    "build": "babel src -d lib",
+    "example": "npm run build && babel example/input.js -o example/output.js",
+    "test": "mocha --compilers js:babel-register",
+    "test:watch": "npm run test -- --watch",
+    "prepublish": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "babel",
+    "plugin",
+    "boilerplate",
+    "babel-plugin"
+  ]
+}
